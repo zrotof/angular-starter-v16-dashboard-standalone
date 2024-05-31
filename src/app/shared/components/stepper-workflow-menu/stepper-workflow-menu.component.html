@@ -1,0 +1,15 @@
+<ul class="stepper">
+    <ng-container *ngFor="let menu of stepperMenus; let i=index">
+        <li 
+            [ngClass]="menu.completed ? 'completed-step-border':''"
+            >
+            <a 
+                class="label"
+                [ngClass]="[menu.active === true ? 'active-step': '', processState === 'EDIT' ? 'hover-step-effect' : '' ]"
+                (click)="onStepNavigationEvent(menu.url)"
+                >
+                {{menu.label}}
+            </a>
+        </li>
+    </ng-container>
+</ul>

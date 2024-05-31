@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-starter-v16-standalone": {
+    "portfolio-admin": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-starter-v16-standalone/browser",
+            "outputPath": "dist/portfolio-admin/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -32,9 +32,11 @@
             ],
             "styles": [
               "./node_modules/aos/dist/aos.css",
-              "src/styles.scss",
               "./node_modules/primeng/resources/themes/saga-blue/theme.css",
-              "./node_modules/primeng/resources/primeng.min.css"
+              "./node_modules/primeng/resources/primeng.min.css",
+              "./node_modules/quill/dist/quill.snow.css",
+              "./node_modules/quill/dist/quill.core.css",
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -75,10 +77,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-starter-v16-standalone:build:production"
+              "browserTarget": "portfolio-admin:build:production"
             },
             "development": {
-              "browserTarget": "angular-starter-v16-standalone:build:development"
+              "browserTarget": "portfolio-admin:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +88,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-starter-v16-standalone:build"
+            "browserTarget": "portfolio-admin:build"
           }
         },
         "test": {
@@ -110,7 +112,7 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/angular-starter-v16-standalone/server",
+            "outputPath": "dist/portfolio-admin/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json",
             "inlineStyleLanguage": "scss"
@@ -139,12 +141,12 @@
           "builder": "@nguniversal/builders:ssr-dev-server",
           "configurations": {
             "development": {
-              "browserTarget": "angular-starter-v16-standalone:build:development",
-              "serverTarget": "angular-starter-v16-standalone:server:development"
+              "browserTarget": "portfolio-admin:build:development",
+              "serverTarget": "portfolio-admin:server:development"
             },
             "production": {
-              "browserTarget": "angular-starter-v16-standalone:build:production",
-              "serverTarget": "angular-starter-v16-standalone:server:production"
+              "browserTarget": "portfolio-admin:build:production",
+              "serverTarget": "portfolio-admin:server:production"
             }
           },
           "defaultConfiguration": "development"
@@ -158,12 +160,12 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-starter-v16-standalone:build:production",
-              "serverTarget": "angular-starter-v16-standalone:server:production"
+              "browserTarget": "portfolio-admin:build:production",
+              "serverTarget": "portfolio-admin:server:production"
             },
             "development": {
-              "browserTarget": "angular-starter-v16-standalone:build:development",
-              "serverTarget": "angular-starter-v16-standalone:server:development"
+              "browserTarget": "portfolio-admin:build:development",
+              "serverTarget": "portfolio-admin:server:development"
             }
           },
           "defaultConfiguration": "production"

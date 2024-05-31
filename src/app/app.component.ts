@@ -33,7 +33,6 @@ import { faFaceMehBlank, faFaceMeh, faFaceSmile } from '@fortawesome/free-regula
   ]
 })
 export class AppComponent implements OnInit {
-  title = 'angular-starter-v16-standalone';
 
   isUserLogged$ !: Observable<boolean>;
 

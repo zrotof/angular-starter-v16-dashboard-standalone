@@ -1,0 +1,65 @@
+.stepper{
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+    position: relative;
+    gap: 1rem;
+
+    &::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -20px;
+        height: 1px;
+        width: 100%;
+        background: #afb4bd;
+    }
+
+    li{
+        display: flex;
+        flex-direction: column;
+        padding: 7px 0;
+        cursor: pointer;
+        position : relative;
+        list-style: none;
+
+        &::after {
+            position: absolute;
+            content: "";
+            bottom: -7px;
+            height: 4px;
+            width: 100%;
+            background-color: #d4d4d4;
+        }
+        
+        a {
+            border: 1px solid #111c2c36;
+            padding: 7px 12px;
+            color: #0c1d37;
+            white-space: nowrap;
+            font-size: 14.5px;
+            font-style: italic;
+            transition : background-color 0.1s ease-in-out;
+        }
+
+        .hover-step-effect{
+            &:hover{
+                color: #0b1d37;
+                background-color: rgb(212, 225, 244);
+                border: 1px solid transparent;  
+            }
+        }
+
+        .active-step{
+            color: #0b1d37;
+            background-color: rgb(212, 225, 244);  
+            box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;  
+        }
+    }
+
+    .completed-step-border{
+        &::after{
+            background-color: #30e773;
+        }
+    }    
+}

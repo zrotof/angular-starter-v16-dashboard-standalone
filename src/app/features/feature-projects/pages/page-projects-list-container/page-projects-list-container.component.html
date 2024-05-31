@@ -1,0 +1,13 @@
+<div class="page-projects-list-container">
+    <app-page-top-header [topHeader]="topHeaderPageData"></app-page-top-header>
+
+    <div class="actions">
+        <button class="add" routerLink="/projets/creer">
+            <fa-icon [icon]="faPlus"></fa-icon>
+            <span>Nouveau Projet</span>
+        </button>
+    </div>
+
+    <app-projects-tabs-filter [projectFilters]="projectFilteredItems$ | async" (projectFilterClickedEvent)="getProjectListByFilter($event)"></app-projects-tabs-filter>
+     
+</div>

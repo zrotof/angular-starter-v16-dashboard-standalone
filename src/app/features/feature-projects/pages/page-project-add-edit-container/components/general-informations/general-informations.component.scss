@@ -1,0 +1,61 @@
+//For primeng editor font
+.ql-font-weight option[value="normal"] {
+    font-family: 'Exo-normal';
+}
+  
+.ql-font-weight option[value="bold"] {
+    font-family: 'Exo-semibold';
+}
+
+.general-informations{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 40px;
+    
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        .row{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            gap: 1.5rem;
+
+            .field{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
+                label{
+                    margin-bottom: 5px;
+                    font-size: 0.95rem;
+                    color: black;
+                }
+
+                p-editor{
+
+                    border-radius: 5px !important;
+                    overflow: hidden;
+
+
+                    .p-editor-container{
+                        border: 1px solid #ced4da !important;
+
+                        .p-editor-content{
+                            font-size: 1rem;
+                            border: none;
+
+                        }
+                        .ql-editor{
+                            padding: 0.5rem;
+                            border-radius: 3px;
+                        }
+                    }
+                }   
+            }
+        }
+    }
+}

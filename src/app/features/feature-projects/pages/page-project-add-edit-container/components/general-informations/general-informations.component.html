@@ -1,0 +1,72 @@
+<div class="general-informations">
+
+    <form [formGroup]="generalDataForm">
+        <div class="row">
+            <div class="field">
+                <label for="name" class="block">Nom de l'entreprise ou du projet</label>
+                <input 
+                    id="name"
+                    type="text" 
+                    pInputText 
+                    formControlName="name"
+                />
+                <div *ngIf="form['name'].invalid && isNextOrPrevButtonClicked" class="form-error">
+                    <span *ngIf="form['name'].errors?.['required']">Nom manquant</span>                    
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="field">
+                <label for="purpose" class="block">De quoi s'agit-il</label>
+                <input 
+                    id="purpose"
+                    type="text" 
+                    pInputText 
+                    formControlName="purpose"
+                />
+                <div *ngIf="form['purpose'].invalid && isNextOrPrevButtonClicked" class="form-error">
+                    <span *ngIf="form['purpose'].errors?.['required']">Sujet manquant</span>                    
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="field">
+                <label for="work" class="block">Quelle réalisation a été effectué ?</label>
+                <input 
+                    id="work"
+                    type="text" 
+                    pInputText 
+                    formControlName="work"
+                />
+                <div *ngIf="form['work'].invalid && isNextOrPrevButtonClicked" class="form-error">
+                    <span *ngIf="form['work'].errors?.['required']">Expliquez la réalisation</span>                    
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+           <div class="field">
+                <label>Contexte du projet</label>
+                <p-editor 
+                    formControlName="context" 
+                    [style]="{ height: '200px'}"
+                    >
+                    <ng-template pTemplate="header">
+                        <span class="ql-formats">
+                            <button type="button" class="ql-bold" aria-label="Bold"></button>
+                            <button type="button" class="ql-italic" aria-label="Italic"></button>
+                            <button type="button" class="ql-underline" aria-label="Underline"></button>
+                        </span>
+                    </ng-template>
+                </p-editor>
+                <div *ngIf="form['context'].invalid && isNextOrPrevButtonClicked" class="form-error">
+                    <span *ngIf="form['context'].errors?.['required']">Contexte du projet manquant</span>                    
+                </div>
+           </div>
+        </div>
+    </form>
+
+    <app-prev-next-stepper [buttons]="prevNextButton" (prevNextButtonClicked)="onPrevNextButtonEvent($event)"></app-prev-next-stepper>
+</div>

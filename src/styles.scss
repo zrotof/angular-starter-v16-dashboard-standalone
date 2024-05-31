@@ -1,7 +1,19 @@
 @import 'variables.scss';
 @import "primeicons/primeicons.css";
 
-*{
+html,
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+li,
+blockquote,
+figure,
+img,
+figcaption{
     margin: 0;
     padding: 0;
     box-sizing: border-box;

@@ -1,0 +1,5 @@
+<div class="prev-nex-stepper">
+    <ng-container *ngFor="let button of buttons">
+        <button (click)="handleButtonClicked(button)"> {{button.label}}</button>
+    </ng-container>
+</div>

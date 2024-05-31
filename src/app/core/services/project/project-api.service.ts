@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Show } from '../../models/show';
 import { environment } from '../../../../environments/environment'
 
 
@@ -9,29 +8,29 @@ import { environment } from '../../../../environments/environment'
   providedIn: 'root'
 })
 
-export class ShowsService {
+export class ProjectApiService {
 
-  baseUrlShow = environment.baseUrl+"shows/";
+  baseUrlShow = environment.baseUrl+"projects/";
   
   constructor(private http : HttpClient) { }
 
-  getShowsListByType( type : string) : Observable<any> {
-    return this.http.get<any>(this.baseUrlShow+`list?type=${type}`);
+  getProjects() : Observable<any> {
+    return this.http.get<any>(this.baseUrlShow);
   }
 
-  getShow(id: string): Observable<Show>{
-    return this.http.get<Show>(this.baseUrlShow+`${id}`);
+  getProject(id: string): Observable<any>{
+    return this.http.get<any>(this.baseUrlShow+`${id}`);
   }
 
-  addShow(show: FormData): Observable<any>{
+  addProject(show: FormData): Observable<any>{
     return this.http.post<any>(this.baseUrlShow, show);
   }
 
-  editShow(id: string ,show: FormData): Observable<any>{
+  editProject(id: string ,show: FormData): Observable<any>{
     return this.http.put<any>(this.baseUrlShow+`${id}`, show );
   }
 
-  deleteShow(id: string): Observable<any>{
+  deleteProject(id: string): Observable<any>{
     return this.http.delete<any>(this.baseUrlShow+`${id}`);
   }
 }

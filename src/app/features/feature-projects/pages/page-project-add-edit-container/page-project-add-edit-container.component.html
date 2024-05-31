@@ -1,0 +1,10 @@
+<div class="page-project-add-edit-container">
+    <app-page-top-header [topHeader]="topHeaderPageData"></app-page-top-header>
+    <app-stepper-workflow-menu 
+        [processState]="processState"
+        [stepperMenus]="stepperMenus"
+        (navigateByStepMenu)="onNavigateByStepMenuHandler($event)"
+        >
+    </app-stepper-workflow-menu>
+    <router-outlet></router-outlet>
+</div>

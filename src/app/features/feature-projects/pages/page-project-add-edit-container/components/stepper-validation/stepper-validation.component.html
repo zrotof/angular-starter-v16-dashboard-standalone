@@ -1,0 +1,27 @@
+<!--
+
+<div class="stepper-validation">
+
+    <ul>
+        <ng-container *ngFor="let stepData of steps">
+            <li>
+                <span>{{stepData.label}}</span>
+
+                <ng-container *ngIf="isStepDataValid(stepData); else failed">
+                    <fa-icon class="success" [icon]=" 'faCircleCheck' | convertStringLabelToFontawesomeIcon "></fa-icon>
+                </ng-container>
+                <ng-template #failed>
+                    <fa-icon class="failed" [icon]=" 'faCircleXmark' | convertStringLabelToFontawesomeIcon "></fa-icon>
+                </ng-template>
+            </li>
+        </ng-container>
+    </ul>
+    <app-prev-next-stepper [buttons]="actionbuttons" (prevNextButtonClicked)="onPrevNextButtonEvent($event)"></app-prev-next-stepper>
+    <button 
+        (click)="onCreatePackage()"
+        [ngClass]="areDataCorrect ? 'correct' : 'not-correct'"
+        >
+        Créer le package
+    </button>
+</div>
+-->

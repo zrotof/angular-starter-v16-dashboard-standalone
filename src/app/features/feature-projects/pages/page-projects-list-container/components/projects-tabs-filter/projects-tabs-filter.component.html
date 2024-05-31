@@ -1,0 +1,8 @@
+<div class="projects-tabs-filter">
+    <ng-container *ngFor="let filter of projectFilters">
+        <button [ngClass]="filter.isActive === true ? 'active-filter' : 'not-active-filter'" (click)="onProjectFilterItemClicked(filter.id)">
+            <span> {{filter.title}}  </span>
+            <span> {{filter.total}} </span>
+        </button>
+    </ng-container>
+</div>

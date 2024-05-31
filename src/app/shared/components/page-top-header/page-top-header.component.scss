@@ -1,0 +1,14 @@
+.page-top-header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 75px;
+
+    .texts{
+        display: flex;
+        flex-direction: column;
+
+        h1{
+            font-weight: bold;
+        }
+    }
+}
